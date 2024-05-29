@@ -1,10 +1,10 @@
 import React from "react";
-// import { doSocialLogin } from "../actions";
+import { doSocialLogin } from "@/app/actions/index";
 
 const Button: React.FC = () => {
   return (
     <div>
-      <form className="flex flex-wrap gap-6">
+      <form action={doSocialLogin} className="flex flex-wrap gap-6">
         <button
           type="submit"
           name="action"
@@ -24,6 +24,8 @@ const Button: React.FC = () => {
       </form>
     </div>
   );
+
+  
 };
 
 export default Button;
