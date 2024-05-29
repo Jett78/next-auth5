@@ -1,8 +1,7 @@
-import React from 'react'
-import { auth } from '../auth'
-
-const page = async() => {
-    const session = await auth()
+import { auth } from "../auth"
+ 
+export default async function UserAvatar() {
+  const session = await auth()
  
   if (!session.user) return null
  
@@ -12,5 +11,3 @@ const page = async() => {
     </div>
   )
 }
-
-export default page
