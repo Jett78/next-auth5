@@ -1,13 +1,15 @@
+"use server"
 import { auth } from "../auth"
+import { redirect } from "next/navigation"
  
-export default async function UserAvatar() {
+export default async function Home() {
   const session = await auth()
  
-  if (!session.user) return null
+  if (!session?.user) redirect("/");
  
   return (
     <div>
-      <img src={session.user.img} alt="User Avatar" />
+      <h2>{session?.user?.name}</h2>
     </div>
   )
 }
